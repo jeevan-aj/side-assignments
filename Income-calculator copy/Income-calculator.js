@@ -5,9 +5,8 @@ let budgetListElement=document.getElementById("Budget-list");
 let expenseListElement=document.getElementById("Expense-list");
 let balanceList=document.getElementById("Balance-list");
 
-let expenseItem=document.getElementById("expense_product_title");
 let tmpExpense=document.getElementById("curent-expense");
-let expense_cost=document.getElementById("expense_product_title");
+
 let budgetInput=document.getElementById("set_budgetinput_id");
 let expenseInput=document.getElementById("check_amount");
 
@@ -23,6 +22,8 @@ const SETBUGET = () => {
     if(budgetValue == ""|| budgetValue === undefined){
       budgetListElement.innerText=msg;
       budgetInput.style.border="1px solid red";
+     
+      
     }
     else{
         budgetListElement.innerHTML=budgetValue; 
@@ -31,7 +32,6 @@ const SETBUGET = () => {
 };
 
 // functoin to show curent expense
-const TOTALEXPENSE=[];
 const EXPENSE = ()=>{
    let curentExpense = tmpExpense.value;
    let msg="enter cost first you dum fuck shit"
@@ -44,9 +44,6 @@ const EXPENSE = ()=>{
        balanceList.innerHTML="0";
    }
    else{
-    TOTALEXPENSE[{
-
-    }]
     expenseListElement.innerHTML=curentExpense;
     balanceList.innerHTML=balance;
    } 
