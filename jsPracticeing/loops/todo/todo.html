@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <div class="alldiv">
+      <div class="mainbox">
+        <h2 class="mainbox-h2">income expense tracker</h2>
+        <h6 class="main-box-h2">your balance</h6>
+        <h2 class="balance">00</h2>
+        <div class="income_expense_divs">
+          <div class="income_main_div">
+            <h2 class="incomediv_h2">income</h2>
+            <p class="incomediv_p">00</p>
+          </div>
+          <div class="income_main_div">
+            <h2 class="incomediv_h2">income</h2>
+            <p class="incomediv_p">00</p>
+          </div>
+        </div>
+        <p>item description</p>
+        <input type="text" id="item-name" />
+        <p>amount</p>
+        <input type="text" id="item-cost" /><br />
+        <button class="enter_button" id="enter_button_id">enter</button>
+      </div>
+      <!-- transaction list -->
+      <div class="transaction_list_div">
+        <h1>transactoin</h1>
+        <ul id="transaction_list_ul"></ul>
+      </div>
+    </div>
+    <script defer src="TODO.JS"></script>
+  </body>
+</html>
