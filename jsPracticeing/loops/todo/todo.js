@@ -40,11 +40,11 @@ function config(){
 }
 function amountUpdate(){
     const amounts =transaction.map((e)=>{
-        return e.amount;
-        
+    const total = amounts.reduce((acc,item)=> (acc+=item),0);
+    balance.innerHTML=`${total}`;
     }  
     );
-    console.log(amounts);
+   
    
 }
 
