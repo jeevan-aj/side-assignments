@@ -5,16 +5,20 @@ let budgetListElement=document.getElementById("Budget-list");
 let expenseListElement=document.getElementById("Expense-list");
 let balanceList=document.getElementById("Balance-list");
 
-let expenseItem=document.getElementById("expense_product_title");
+let expenseItem=document.getElementById("expense-name");
 let tmpExpense=document.getElementById("curent-expense");
 let expense_cost=document.getElementById("expense_product_title");
 let budgetInput=document.getElementById("set_budgetinput_id");
 let expenseInput=document.getElementById("check_amount");
 
 
+let mainList = document.getElementById("expense-ol-id");
+
+
 
 const setBudgetButton=document.getElementById("setbudget_id");
 const checkAmountButton=document.getElementById("checkamount_a");
+
 
 // function to set budget accordingly
 const SETBUGET = () => {
@@ -31,9 +35,10 @@ const SETBUGET = () => {
 };
 
 // functoin to show curent expense
-const TOTALEXPENSE=[];
+
 const EXPENSE = ()=>{
    let curentExpense = tmpExpense.value;
+ 
    let msg="enter cost first you dum fuck shit"
    let balance=(budgetListElement.innerHTML)-(expenseListElement.innerHTML);
 
@@ -44,9 +49,7 @@ const EXPENSE = ()=>{
        balanceList.innerHTML="0";
    }
    else{
-    TOTALEXPENSE[{
-
-    }]
+   
     expenseListElement.innerHTML=curentExpense;
     balanceList.innerHTML=balance;
    } 
@@ -67,6 +70,31 @@ expenseInput.addEventListener("click",function(e1){
 });
 
 
+tmpExpense.addEventListener("keydown", function(e){
+  if(e.key == "Enter" && this.value !==""){
+    EXPENSE();
+    show_list(this.value,expenseItem.value);
+    expenseItem.value="";
+    this.value = "";
+  }
+  
+});
+
+
+function show_list(value,e){
+  let li = document.createElement("li");
+  let liText = document.createTextNode(value);
+  let expenseName = document.createElement("p");
+  let expenseValue = document.createTextNode(e);
+  console.log(e);
+
+  expenseName.appendChild(expenseValue);
+  li.appendChild(expenseName);
+  
+  li.appendChild(liText);
+  mainList.appendChild(li);
+  
+}
 
 
 

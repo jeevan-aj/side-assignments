@@ -7,15 +7,13 @@
     font-family: 'Roboto', sans-serif;
 
 }
+
 .main_div{
     display: flex;
     max-width: 600px;
     min-width:620px;
     position: relative;
-    left:50%;
-    transform: translate(-70%);
-    margin-top:15%;
-    
+    margin:20px 20px;
     
 }
 .first_section_div{
@@ -110,3 +108,39 @@
     margin-left:50px;
 }
 
+/* expense-list */
+.expense_section-maindiv{
+    min-width:300px;
+    min-height: 300px;
+    margin:20px 20px;
+    background-color: rgb(167, 167, 225);
+    color:white;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(24, 24, 24, 0.5), inset 9px 9px 25px rgba(69, 67, 67, 0.5),inset -9px -9px 25px rgba(70, 68, 68, 0.5);
+}
+.expense_section_h1{
+    font-size: 38px;
+    font-family: Poppins,sans-serif;
+    background: linear-gradient(to bottom,rgb(0, 0, 0),rgb(132, 128, 128));
+    -webkit-background-clip: text;
+    box-shadow:-6px 5px 5px rgb(0, 0, 0);
+    border-righ:.01px solid snow;
+    -webkit-text-fill-color: transparent;
+    border-radius: 10px;
+    text-align:center;
+    
+}
+
+.expense_section_ol li{
+    position: relative;
+    margin:auto;
+    min-width: 200px;
+    padding:20px;
+    border-radius: 10px;
+    margin:20px 10px;
+    font-size: 22px;
+    box-shadow:10px 10px 10px rgba(0,0,0,0.5), inset 9px 9px 15px rgba(0,0,0,0.3),inset -9px -9px 14px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-evenly;
+}

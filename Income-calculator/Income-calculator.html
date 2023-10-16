@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <title>Income calculator</title>
 </head>
 <body>
@@ -24,7 +27,7 @@
     </div>
     <div class="expense_section">
       <div class="expense_section_h2">Expenses</div>
-      <input type="text" placeholder="Enter title of Product" class="expense_product_title">
+      <input type="text" placeholder="Enter title of Product" id="expense-name" class="expense_product_title">
       <input type="number" class="expense_cost" id="curent-expense" placeholder="cost">
       <div class="expense_checkamount_button_div">
         <a href="" class="checkamount_a" id="check_amount">Check amount</a>
@@ -47,6 +50,12 @@
       <h4 id="Balance-list">1000</h4>
     </div>
   </div>
+</div>
+
+<!-- second-section -->
+<div class="expense_section-maindiv">
+  <h1 class="expense_section_h1">Expenses</h1>
+  <ol class="expense_section_ol" id="expense-ol-id"></ol>
 </div>
 
   <!-- third section -->
