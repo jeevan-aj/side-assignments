@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
+    <input type="text" id="item_name">
     <input type="text" class="first_input" placeholder="enter here" id="inputBx">
     <div class="box">
         <h1>Expenses</h1>
@@ -14,41 +15,6 @@
     </div>
    
     <button onclick="myFunction(inputBx.value)">enter</button>
-    <script>
-        let inputBox = document.getElementById("inputBx");
-        let mainLlist = document.getElementById("list");
-       inputBox.addEventListener('keydown',function(e){
-        if(e.key=="Enter"){
-            myFunction(this.value)
-            this.value="";
-        }
-        
-       });
-
-        function myFunction(vale){
-        let li = document.createElement("ol");
-        let liText = document.createTextNode(vale);
-        let msg= "enter value first";
-        li.appendChild(liText);
-        if(inputBox.value!=="" && inputBox.value!== undefined &&inputBox.value!=null){
-            mainLlist.appendChild(li);
-        }
-        else{
-            let msg="enter any value first";
-           inputBox.style.border="1px solid red";
-        }
-        
-  
-        inputBox.value = "";
-
-       }
-       
-      
-    
-
-       
-
-        
-    </script>
+    <script defer src="TODO.JS"></script>
 </body>
 </html>
