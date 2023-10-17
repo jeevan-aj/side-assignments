@@ -2,6 +2,7 @@
 .alldiv{
     display: flex;
     gap:20px;
+    justify-content: space-around;
 
 }
 .mainbox{
@@ -43,9 +44,22 @@
     justify-content: space-between;
     position:relative;
 }
-.remove-btn{
+.removeBtn{
     position:absolute;
-    right:-27px;
-  
+    right:-10px;
+    top:-10px;
+    display:none;
+    border-radius:50px;
+    border:none;
 
+}
+
+.transaction_list_div li:hover{
+   .removeBtn{
+    display: block;
+   }
+}
+#myChart{
+    max-width: 300px;
+    max-height: 300px;
 }
