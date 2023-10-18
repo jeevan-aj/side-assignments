@@ -63,3 +63,20 @@
     max-width: 300px;
     max-height: 300px;
 }
+
+.exp{
+    background-color: green; 
+   
+    
+}
+.inc{
+    background-color: red;
+   
+}
+#smallli{
+    position:absolute;
+    width:10px;
+    height: 40px;
+    padding:0;
+    margin:0;
+}

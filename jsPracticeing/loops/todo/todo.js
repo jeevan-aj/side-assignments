@@ -15,8 +15,14 @@ let transaction = localStorage.getItem("transaction") !== null ? localStorageTra
 
 function transactionDetails(transaction){
     // console.log(transaction);
+    
     let sign = transaction.amount <0? "-":"+";
     const item = document.createElement("li");
+    const itemsmall = document.createElement("li");
+    itemsmall.setAttribute("id","smallli");
+    smalldiv = item.innerHTML =`<div class="smalldiv"></div>`
+    itemsmall.classList.add(transaction.amount > 0? "exp":"inc");
+    transactionList.appendChild(itemsmall);
     item.innerHTML = `${transaction.discription}
     <span>${sign} ${Math.abs(transaction.amount)}</span>
     <button class="removeBtn"  onclick="removeTransaction(${transaction.id})">x</button>
