@@ -86,7 +86,7 @@ function show_list(value,e){
   let liText = document.createTextNode(value);
   let expenseName = document.createElement("p");
   let expenseValue = document.createTextNode(e);
-  console.log(e);
+  
 
   expenseName.appendChild(expenseValue);
   li.appendChild(expenseName);

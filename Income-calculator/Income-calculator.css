@@ -144,3 +144,12 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+/* income expense indicator */
+
+.exp{
+    background-color: red;
+}
+.inc{
+    background-color: green;
+}

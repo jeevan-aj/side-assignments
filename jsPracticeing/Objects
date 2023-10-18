@@ -1,0 +1,19 @@
+let user= {
+    name:"jeevan",
+    "age is":12,
+    isadmin:true,
+
+}
+ let age = user["age is"];
+ user.names = "hello";
+ user.name = "jeevan1";
+ user["age is"] = 13;
+ let value =user["age is"]
+ console.log(user["age is"]);
+console.log(user);
+console.log(user.name)
+console.log(age);
+delete user.name;
+console.log(user.isadmin);
+console.log(user);
+console.log(user[value]);
