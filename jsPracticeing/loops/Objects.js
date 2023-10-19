@@ -1,14 +1,14 @@
-let user= {
-    name:"jeevan",
-    "age is":12,
-    isadmin:true,
+// let user= {
+//     name:"jeevan",
+//     "age is":12,
+//     isadmin:true,
 
-}
- let age = user["age is"];
- user.names = "hello";
- user.name = "jeevan1";
- user["age is"] = 13;
- let value =user["age is"]
+// }
+//  let age = user["age is"];
+//  user.names = "hello";
+//  user.name = "jeevan1";
+//  user["age is"] = 13;
+//  let value =user["age is"]
 
 //  console.log(user["age is"]);
 // console.log(user);
@@ -48,5 +48,63 @@ let user= {
 // }
 // console.log(shorthand("jeevan","jeevan1"));
 
+// let objects= {
+//     namek:"jeevan",
+//     12:21,
+//     isAdmin:true,
+// }
+
+// console.log(objects);
+// console.log(objects.namek);
+// console.log(objects["namek"]);
+// console.log("namek" in objects);
+
+
+
+// for(i in objects){
+//    console.log(i);
+//    console.log(objects[i])
+// }
+// console.log(typeof(12));
+
+
+
+//summeing values 
+// let salaries = {
+//     John: 100,
+//     Ann: 160,
+//     Pete: 130,
+//   }
+  
+
+// function isEmpty(a){
+//     let sum = 0;
+// for(let i in a){
+// sum += a[i]; 
+// }
+// return sum;
+// }
+// console.log(isEmpty(salaries));
+
+
+
+//multiply values of object by 2 if they are number and in else case do nothiing 
+// let menu = {
+//     width: 200,
+//     height: 300,
+//     title: "My menu"
+//   };
+
+// const multiplyNumeric= (e)=>{
+//     for(i in e){
+//      if(typeof e[i]=='number'){
+//         e[i] *= 2;
+//      }
+//      console.log(typeof(e[i]));
+//     } 
+// }
+
+// multiplyNumeric(menu);
+// console.log(menu);
 
 
