@@ -1,4 +1,4 @@
 let count = (string)=> {
-    return string.split("").filter((cur)=> cur==="i").map((cur,index)=> index+1).reduce((acc,cur)=> cur)
+    return string.split("").filter((cur)=> cur==="i"||cur==="a"||cur==="e"||cur==="o"||cur==="u").map((cur,index)=> index+1).reduce((acc,cur)=> cur)
 }
 console.log(count("aiei"))
