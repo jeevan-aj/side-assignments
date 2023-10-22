@@ -63,24 +63,39 @@ function solution(number){
 
 
 
-  function isIsogram(str){
-    let flag = true;
-    let splited =  str.split("")
-    let filtered = splited.filter((cur,idx)=> {
-      if(splited.indexOf(cur)==idx){
-       return  true;
-      }
-      else{
-        return false;
-      }
-    });
-    console.log(filtered);
-   if(filtered==""||flag){
-    return true;
-   }
-   else{
-    return false;
-   }
-  }
-  console.log(isIsogram("hello"));
+  // function isIsogram(str){
+  //   let flag = true;
+  //   let splited =  str.split("")
+  //   let filtered = splited.filter((cur,idx)=> {
+  //     if(splited.indexOf(cur)==idx){
+  //      return  true;
+  //     }
+  //     else{
+  //       return false;
+  //     }
+  //   });
+  //   console.log(filtered);
+  //  if(filtered==""||flag){
+  //   return true;
+  //  }
+  //  else{
+  //   return false;
+  //  }
+  // }
+  // console.log(isIsogram("hello"));
  
+  function isIsogram(str) {
+    let flag = true;
+    let splited = str.toLowerCase().split(""); // Convert to lowercase to make the comparison case-insensitive
+
+    let filtered = splited.filter((cur, idx) => {
+        if (splited.indexOf(cur) !== idx) {
+            flag = false;
+        }
+    });
+
+    return flag;
+}
+
+// Example usage
+console.log(isIsogram("whlo"))
