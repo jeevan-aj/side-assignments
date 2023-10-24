@@ -1,0 +1,11 @@
+function outer(){
+    let outerVariable = "hello";
+    function inner(){
+        console.log(outerVariable);
+        a = 20;//a is variable of outerfunctoin yet it is accessed in innervariable this is because of closure
+    }
+    console.log(a);
+    return inner()
+}
+outer();
+

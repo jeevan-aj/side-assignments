@@ -12,7 +12,31 @@
 // }
 // console.log(foxinflock([1,5,5,6]));
 
-function XO(str) {
-  
+//split and add 
 
-  console.log(XO("fddooXxsd"))
+function solution(str){
+ (str.length%2!=0)? str=str+"_":str;
+ const splited =  str.match(/.{1,2}/g);
+ 
+ 
+ console.log(splited); 
+}
+solution("abcde");
+
+
+function solution(str){
+  if(str==""){
+    return [];
+  }
+  (str.length%2!=0)? str = str+"_":str;
+   let pairedStr = str.match(/.{1,2}/g);
+   return pairedStr;
+}
+console.log(solution(""));
+
+function test (str){
+  return (str+"_").match(/.{2}/g)||[]
+}
+console.log(test("hell"))
+
+
