@@ -13,3 +13,4 @@ const primeGenrator = (e)=> {
     }
 }
 primeGenrator(10);
+
