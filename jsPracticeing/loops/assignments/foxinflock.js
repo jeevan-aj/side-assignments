@@ -37,6 +37,6 @@ console.log(solution(""));
 function test (str){
   return (str+"_").match(/.{2}/g)||[]
 }
-console.log(test("hell"))
+console.log(test("helle"))
 
 

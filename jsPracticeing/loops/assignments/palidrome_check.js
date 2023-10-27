@@ -1,4 +1,4 @@
-let strig = "rrw";
+// let strig = "malayalam";
 
 // let reversed =strig.split("").reverse().join("");
 // if(reversed ===strig){
@@ -10,8 +10,8 @@ let strig = "rrw";
 
 
 let checkPalindrome = (e)=> {
-    let reversed = strig.split("").reduce((acc,cur)=> cur+acc);
-    if(e===reversed){
+    let reversed = e.split("").reduce((acc,cur)=> cur+acc);
+    if(e==reversed){
         console.log("palindrome");
     }
     else{
@@ -19,4 +19,4 @@ let checkPalindrome = (e)=> {
     }
 }
 
-checkPalindrome(strig);
+checkPalindrome("malayalam");
