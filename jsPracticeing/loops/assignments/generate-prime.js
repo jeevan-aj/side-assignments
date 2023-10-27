@@ -12,5 +12,5 @@ const primeGenrator = (e)=> {
         }
     }
 }
-primeGenrator(10);
+primeGenrator(12);
 

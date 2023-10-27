@@ -7,4 +7,4 @@ const isPrimt = (e)=> {
     }
     return "prime";
 }
-console.log(isPrimt(12));
+console.log(isPrimt(7));
