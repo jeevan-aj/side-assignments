@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="expense-tracker.css" />
+    
+  </head>
+  <body>
+    <div class="alldiv">
+      <div class="mainbox">
+        <h2 class="mainbox-h2">income expense tracker</h2>
+        <h6 class="main-box-h6">your balance</h6>
+        <h2 class="balance" id="balance-id">00</h2>
+        <div class="income_expense_divs">
+          <div class="income_main_div">
+            <h2 class="incomediv_h2">income</h2>
+            <p class="incomediv_p" id="income-id">00</p>
+          </div>
+          <div class="income_main_div">
+            <h2 class="incomediv_h2" >expense</h2>
+            <p class="incomediv_p" id='expense_id'>00</p>
+          </div>
+        </div>
+        <p>item description</p>
+        <input type="text" id="item-name" />
+        <p>amount</p>
+        <input type="number" id="item-cost" /><br />
+        <button class="enter_button" id="enter_button_id">enter</button>
+      </div>
+      <!-- transaction list -->
+      <div class="transaction_list_div">
+        <h1>transactoin</h1>
+        <ul id="transaction_list_ul">
+          <li class="exp">
+            <span id="indicator"></span>
+          </li>
+          <li class="inc">200</li>
+        </ul>
+      </div>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    
+    <script defer src="expense-tracker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+
+.box{
+    background-color: rgb(140, 140, 207);
+    margin: auto;
+    width:400px;
+    padding:40px;
+    color:white;
+    box-shadow: 10px 10px 10px rgb(29, 28, 28),inset -10px -10px 15px rgba(0,0,0,0.3), inset 5px 2px 15px rgba(0,0,0,0.3);
+    border-radius: 30px;
+   
+}
+ol{
+
+    text-decoration: none;
+    position: relative;
+    padding:20px;
+    list-style: none;
+    box-shadow: 10px 10px 10px rgb(29, 28, 28),inset 4px 4px 5px rgba(0,0,0,0.3), inset -3px -3px 5px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    margin-bottom:30px;
+    margin-right: 20px;
+    font-size: 29px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.box h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center; 
+}
+.box i{
+    width:30px;
+    height: 30px;
+    color:red;
+    background-color: red;
+    position:absolute;
+    left:300px;
+}
+.box i::before{
+    content:'';
+    width:12px;
+    height: 2px;
+    top:15px;
+    left: 10px;
+    position: absolute;
+    background-color: white;
+    transform: rotate(-45deg);
+}
+.box i::after{
+    content:'';
+    position:absolute;
+    width:12px;
+    height: 2px;
+    top:15px;
+    left:10px;
+    transform: rotate(45deg);
+    background-color: white;
+
+}
+

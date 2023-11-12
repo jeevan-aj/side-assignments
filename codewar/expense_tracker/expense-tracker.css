@@ -1,0 +1,82 @@
+
+.alldiv{
+    display: flex;
+    gap:20px;
+    justify-content: space-around;
+
+}
+.mainbox{
+    border: 1px solid black;
+    min-width:300px;
+    padding:10px;
+    max-height: 500px;
+}
+.transaction_list_div{
+    border:1px solid black;
+    min-width:400px;
+}
+.income_main_div{
+    border:1px solid black;
+    padding:10px;
+    min-width:100px;
+}
+#enter_button_id{
+   margin-top:20px;
+}
+.income_expense_divs{
+    display: flex;
+    gap:40px;
+}
+
+
+/* transaction list */
+
+.transaction_list_div{
+    padding:20px;
+}
+.transaction_list_div li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border:1px solid black;
+    margin:10px;
+    padding:10px;
+    justify-content: space-between;
+    position:relative;
+}
+.removeBtn{
+    position:absolute;
+    right:-10px;
+    top:-10px;
+    display:none;
+    border-radius:50px;
+    border:none;
+
+}
+
+.transaction_list_div li:hover{
+   .removeBtn{
+    display: block;
+   }
+}
+#myChart{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.exp{
+    background-color: green; 
+   
+    
+}
+.inc{
+    background-color: red;
+   
+}
+#smallli{
+    position:absolute;
+    width:10px;
+    height: 40px;
+    padding:0;
+    margin:0;
+}

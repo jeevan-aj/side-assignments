@@ -1,0 +1,16 @@
+function rot13(message){
+    const string = [...message]
+    string.forEach((cur,idx)=> {
+      let s = cur.charCodeAt(0)+13;
+      if(s>122){
+        s = 65;
+      }
+        console.log( String.fromCharCode(s));
+
+    })
+
+
+}
+rot13("test");
+
+
