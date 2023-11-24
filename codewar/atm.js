@@ -6,7 +6,9 @@ function validatePIN(pin) {
           return every(char => !isNaN(char));
         }
     }
+    console.log("hello world")
    
     return false;
+
   }
   console.log(validatePIN(1234))
