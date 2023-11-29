@@ -16,9 +16,13 @@ let arr = [
 ]
 
 
+
 for(i of arr){
-    if(i.includes("jeevan abraham3")){
-        console.log(i)
+    if(i.name==="jeevan abraham2"){
+        console.log(i.age)
     }
 }
+
+
+
 
