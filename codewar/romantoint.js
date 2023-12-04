@@ -1,6 +1,6 @@
 
 var romanToInt = function(s) {
-    let i,j,value;
+    let i;
     let len = s.length;
     let dict = {
     "I": 1,
@@ -12,9 +12,17 @@ var romanToInt = function(s) {
     "M": 1000,
     "d": 111,
     }
+    let total = 0
 
-
-    
-
-    console.log(romanToInt("I"))
+    for(i=0;i<len;i++){
+        let cur = dict[s[i]]
+        if(cur<dict[s[i+1]]){
+            total -= cur  
+        }
+        else{
+            total += cur
+        }
+    }
+    return total
 }
+console.log(romanToInt("V"))
