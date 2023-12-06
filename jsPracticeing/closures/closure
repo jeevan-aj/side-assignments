@@ -1,13 +1,13 @@
-// function outer(){
-//     let outerVariable = "hello";
-//     function inner(){
-//         console.log(outerVariable);//outervariable is variable of outerfunctoin yet it is accessed in innervariable this is because of closure
-//         a = 20;
-//     }
-//     console.log(a);//inner can access variable of outer but outer cannot acces inners varaibles this provides data security
-//     return inner()
-// }
-// outer();
+function outer(){
+    let outerVariable = "hello";
+    function inner(){
+        console.log(outerVariable);//outervariable is variable of outerfunctoin yet it is accessed in innervariable this is because of closure
+        a = 20;
+    }
+    console.log(a);//inner can access variable of outer but outer cannot acces inners varaibles this provides data security
+    return inner()
+}
+outer();
 
 
 
