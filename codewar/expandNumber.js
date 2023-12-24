@@ -6,6 +6,8 @@ function expandedForm(num) {
             result.push(firstArray[i]+'0'.repeat(firstArray.length-i-1))
         }
     }
+    console.log(expandedForm)
+    
     return result.join('+')
   }
 
