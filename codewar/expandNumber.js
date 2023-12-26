@@ -12,3 +12,6 @@ function expandedForm(num) {
   }
 
   console.log(expandedForm(12))
+
+  let fsdfds = "strereR"
+ console.log(fsdfds.replace(/[re]/g,""))
