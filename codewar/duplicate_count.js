@@ -18,6 +18,7 @@ function duplicateCount(input) {
         }
       }
     }
+    console.log("hello")
   
     return count;
   }
