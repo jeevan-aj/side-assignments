@@ -3,3 +3,4 @@ function getAge(inputString){
     return parseInt(newArray[0])
   }
   console.log("hello")
+ 
