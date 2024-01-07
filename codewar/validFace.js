@@ -7,3 +7,4 @@ function countSmileys(arr) {
   })
     return sum
   }
+  console.log("hello")
