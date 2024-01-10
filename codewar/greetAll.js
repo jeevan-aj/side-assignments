@@ -1,3 +1,5 @@
 function sayHello(name) {
-    return "Hello, "+name
+    return `hello ${name}`
    }
+
+   console.log(sayHello("jeevan"))
