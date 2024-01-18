@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    /* Your styles remain unchanged */
+  </style>
+</head>
+<body>
+
+  <h1>Todo App</h1>
+
+  <button onclick="getAllTodos()">Get All Todos</button>
+
+  <table id="todoTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Completed</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="todoTableBody"></tbody>
+  </table>
+
+   <!-- Input fields for creating a new todo -->
+  <label for="newTodoName">Name:</label>
+  <input type="text" id="newTodoName" placeholder="Enter Todo Name">
+  <label for="newTodoCompleted">Completed:</label>
+  <input type="checkbox" id="newTodoCompleted">
+  <button onclick="createTodo()">Create Todo</button>
+
+   <!-- Popup for editing and updating a todo  -->
+  <div id="editPopup" class="popup">
+    <label for="editTodoNamePopup">Name:</label>
+    <input type="text" id="editTodoNamePopup">
+    <label for="editTodoCompletedPopup">Completed:</label>
+    <input type="checkbox" id="editTodoCompletedPopup">
+    <button onclick="updateTodo()">Update Todo</button>
+  </div>
+
+  <div id="result"></div>
+
+  <!-- Hidden input for storing the todo ID to be updated or deleted -->
+  <input type="hidden" id="updateDeleteTodoId">
+
+  <script>
+    function displayResult(result) {
+      const tableBody = document.getElementById('todoTableBody');
+      tableBody.innerHTML = "";
+
+      result.forEach(todo => {
+        const row = tableBody.insertRow();
+        row.insertCell(0).innerText = todo._id;
+        row.insertCell(1).innerText = todo.name;
+        row.insertCell(2).innerText = todo.completed ? 'Yes' : 'No';
+
+        const editButton = document.createElement('button');
+        editButton.innerText = 'Edit';
+        editButton.addEventListener('click', () => openEditPopup(todo._id, todo.name, todo.completed));
+        row.insertCell(3).appendChild(editButton);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete';
+        deleteButton.addEventListener('click', () => deleteTodoById(todo._id));
+        row.insertCell(4).appendChild(deleteButton);
+      });
+    }
+
+    function openEditPopup(todoId, todoName, todoCompleted) {
+      const editPopup = document.getElementById('editPopup');
+      const editTodoName = document.getElementById('editTodoNamePopup');
+      const editTodoCompleted = document.getElementById('editTodoCompletedPopup');
+      const updateDeleteTodoId = document.getElementById('updateDeleteTodoId');
+
+      if (editPopup && editTodoName && editTodoCompleted && updateDeleteTodoId) {
+        editTodoName.value = todoName;
+        editTodoCompleted.checked = todoCompleted;
+
+        editPopup.style.display = 'block';
+
+        updateDeleteTodoId.value = todoId;
+      } else {
+        console.error('Could not find the required elements in the popup.');
+      }
+    }
+
+    function closeEditPopup() {
+      const editPopup = document.getElementById('editPopup');
+      if (editPopup) {
+        editPopup.style.display = 'none';
+      }
+    }
+
+    function getAllTodos() {
+      fetch('http://localhost:3000/')
+        .then(response => response.json())
+        .then(data => displayResult(data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function createTodo() {
+      const newTodoName = document.getElementById('newTodoName').value;
+      const newTodoCompleted = document.getElementById('newTodoCompleted').checked;
+
+      const todoData = {
+        name: newTodoName,
+        completed: newTodoCompleted
+      };
+
+      fetch('http://localhost:3000/todos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(todoData),
+      })
+        .then(response => response.json())
+        .then(data => {
+          // Instead of displaying just the new data, reload all todos
+          getAllTodos();
+          closeEditPopup();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function updateTodo() {
+      const editTodoName = document.getElementById('editTodoNamePopup').value;
+      const editTodoCompleted = document.getElementById('editTodoCompletedPopup').checked;
+      const todoId = document.getElementById('updateDeleteTodoId').value;
+
+      const todoData = {
+        name: editTodoName,
+        completed: editTodoCompleted
+      };
+
+      fetch(`http://localhost:3000/todos/${todoId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(todoData),
+      })
+        .then(response => response.json())
+        .then(data => {
+          getAllTodos(); // Reload all todos after update
+          closeEditPopup();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function deleteTodoById(todoId) {
+      fetch(`http://localhost:3000/todos/${todoId}`, {
+        method: 'DELETE',
+      })
+        .then(response => response.json())
+        .then(data => {
+          // Instead of displaying just the deleted data, reload all todos
+          getAllTodos();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html> 
