@@ -6,24 +6,75 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
 
     <div class="div">To do app</div>
+    <div class="full-container">
     <form action="" class="input-container">
         <input type="text" id="input-todo" placeholder="enter your text here">
         <button id="add-todo" type="submit">+</button>
     </form>
+    
 
-    <div class="class-container">
-        
+    <div class="class-container" id="class-containerid">
+        <!-- <div class="todo">
+            <div class="todo-info">
+                <input type="checkbox" class="to-completed" checked>
+                <p class="todoname">this is first to do </p>
+            </div>
+             <form class="todoBtn">
+                <button class="todo-edit" data-bs-toggle="modal" data-bs-target="#modalId">edit</button>
+                <button class="todo-delete">delete</button>
+             </form>
+        </div>
+        <div class="todo">
+            <div class="todo-info">
+                <input type="checkbox" class="to-completed" checked>
+                <p class="todoname">second todo</p>
+            </div>
+            <div class="todo-btn">
+                <button class="todo-edit" data-bs-toggle="modal" data-bs-target="#modalId">edit</button>
+                <button class="todo-delete">delete</button>
+            </div>
+        </div>
+         -->
+           
     </div>
-   
+</div>
+  
+<div class="Modal-outer-div">
+  <div class="modal" id="modalId" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Todo</h5>
+          <button type="button" class="btn-close" id="modalCloseId" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modalCheckbox">
+            <input type="text" placeholder="Enter your name here" class="edit-text" id="editId">
+          </div>
+          <div class="modalCheckbox">
+            <input type="checkbox" class="edit-todocompleted">
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="save_modal" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
 
+<script src=""></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 <script src="index.js"></script>
