@@ -1,0 +1,98 @@
+*{
+    margin:none;
+    border-radius: none;
+    box-sizing: border-box;
+    padding:none;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+
+}
+.div{
+    margin:100px;
+    display:flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+}
+
+.full-container{    
+    padding:30px;
+    border: 0.1px solid black;
+    margin:0px 450px 0px 450px;
+}
+
+#input-todo{
+    padding:10px;
+}
+
+.todo{
+    margin-top:10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    align-items: center;
+    padding:10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    width: 100%;
+}
+
+.todoname{
+    margin:0px;
+}
+.todo-info{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding-bottom:0px;  
+}
+
+
+.todo-edit{
+    background-color: green;
+    color:white;
+}
+
+.todo-delete{
+    background-color: red;
+    color:white;
+    margin-left:5px;
+}
+
+
+.modal{
+    backdrop-filter: blur(10px); /* Adjust the blur effect as needed */
+  background: rgba(37, 36, 36, 0.3); /* Adjust the alpha (fourth value) for transparency */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    
+}
+.modal-dialog{
+   display: block;
+   margin-top:20%;
+}
+
+.modal-content{
+    height: 300px;
+}
+
+
+.edit-todocompleted{
+    width: 30px;
+    height: 30px;
+}
+
+.modal-body{
+    display: flex;
+    justify-content: space-evenly;
+}

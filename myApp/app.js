@@ -53,8 +53,19 @@ app.get('/todos/:id',async(req,res)=> {
 })
 
 app.post('/todos',async (req,res)=> {
-    const todo = await todoModel.create(req.body)
-    res.json(todo)
+
+    try{
+        const todo = await todoModel.create(req.body)
+        res.json(todo)
+    }
+    catch(error){
+        if(error.code === 11000){
+            res.status(409).json({error:'item already exists'})
+        }
+        else{
+            res.status(500).json({error:'Internal server error'})
+        }
+    }
 })
 
 app.put('/todos/:id',async(req,res)=> {
