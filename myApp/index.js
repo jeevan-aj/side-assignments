@@ -3,11 +3,12 @@ let inputTodo = document.getElementById('input-todo')
 let addTodo = document.getElementById('add-todo')
 const modal = document.getElementById('modalId')//modal id 
 const editId = document.getElementById('editId')//edit input id
+const editCheck = document.getElementById('edit-check')
 let todoArray = []
 
 const url = "http://localhost:3000/"
 const postUrl = "http://localhost:3000/todos"
-const delUrl  = "http://localhost:3000/todos/:id"
+get_todo()
 
 //this function fetch our data from backend and bring all todos to frontend
 async function get_todo(){
@@ -35,7 +36,7 @@ async function post_todo(){
             method:'post',
             body:JSON.stringify({
                 name:inputTodo.value,
-                completed:false,
+                completed:document.getElementById('todoCompletedCheckbox').checked,
             })
            })
         if(!res.ok){
@@ -94,7 +95,7 @@ async function edit_todo(cur){
             method:'put',
             body:JSON.stringify({
                 name:editId.value,
-                completed:false,
+                completed:document.getElementById('edit-check').checked
             })
            })
         if(!res.ok){
@@ -121,12 +122,17 @@ async function edit_todo(cur){
     }
 }
 
+
 function showModal(cur){
+    editId.value = cur.name
+    editCheck.checked = cur.completed
     modal.style.display = "block"
     let save_edit = document.getElementById('save_modal')
     save_edit.addEventListener('click',()=> {
         edit_todo(cur)
         closeModal()
+        location.reload()
+       
     })
 }
 
@@ -184,10 +190,8 @@ function display_todos(todoArray){
         todoEdit.classList.add('todo-edit')
         todoEdit.innerHTML = 'edit'
         todoEdit.addEventListener('click',(e)=> {
-            e.preventDefault()
             showModal(cur);
             console.log('opnen modal')
-           
         })
 
 
@@ -196,9 +200,9 @@ function display_todos(todoArray){
         todoDel.classList.add('todo-delete')
         todoDel.innerHTML = 'Delete'
         todoDel.addEventListener('click',(e)=> {
-            e.preventDefault()
             console.log("Delete")
             delete_todo(cur)
+            location.reload();
         })
         
         todoinfo.appendChild(todocompleted)

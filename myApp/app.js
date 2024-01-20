@@ -24,6 +24,7 @@ function conect(url){
 
 
 async function start(){
+    
     try{
         await conect(mongoString)
         app.listen(port,()=> {
@@ -36,10 +37,6 @@ async function start(){
 }
 
 start()
-
-app.use(express.json())
-
-
 
 
 app.get('/',async (req,res)=> {
