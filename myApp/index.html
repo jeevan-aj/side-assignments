@@ -15,6 +15,7 @@
     <div class="full-container">
     <form action="" class="input-container">
         <input type="text" id="input-todo" placeholder="enter your text here">
+        <input type="checkbox" id="todoCompletedCheckbox">
         <button id="add-todo" type="submit">+</button>
     </form>
     
@@ -58,13 +59,13 @@
             <input type="text" placeholder="Enter your name here" class="edit-text" id="editId">
           </div>
           <div class="modalCheckbox">
-            <input type="checkbox" class="edit-todocompleted">
+            <input type="checkbox" class="edit-todocompleted" id="edit-check">
           </div>
-          
+          <button type="button" id="save_modal" class="btn btn-primary">Save changes</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" id="save_modal" class="btn btn-primary">Save changes</button>
+          
         </div>
       </div>
     </div>
